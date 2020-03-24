@@ -8,11 +8,6 @@ TryPass(p) {
 	return
 }
 
-Log(t) {
-	FileAppend [LOG] %t%`n, *
-	return
-}
-
 countLines(filen) {
 	i := 0
 	Loop, read, %filen%
@@ -28,8 +23,6 @@ TrayTip,, F8 to start the timer, 3,
 
 FileName := "test.txt"
 fileLines := countLines(FileName)
-Log(fileLines)
-TrayTip,,%FileLines%, 3,
 F8::
 	started:= True
 	i := 0
